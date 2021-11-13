@@ -1,5 +1,5 @@
-# Decentralized ID and Access Management (DIAM) for IoT Networks
-- [Decentralized ID and Access Management (DIAM) for IoT Networks](#decentralized-id-and-access-management-diam-for-iot-networks)
+# Blockchain-based digitization of the roaming agreement drafting process
+- [Blockchain-based digitization of the roaming agreement drafting process](#blockchain-based-digitization-of-the-roaming-agreement-drafting-process)
     - [Purpose of this Solution Brief](#purpose-of-this-solution-brief)
     - [Intended Audience](#intended-audience)
   - [Abastract](#abastract)
@@ -16,3 +16,4 @@ The audience for this solution brief includes any vendors or users interested in
 ## The Problem:
 ## The Solution:
 ## References
+1. GSMA, "International Roaming explained", online available: https://www.gsma.com/latinamerica/wp-content/uploads/2012/08/GSMA-Mobile-roaming-web-English.pdf, United Kingdom, 2012.
