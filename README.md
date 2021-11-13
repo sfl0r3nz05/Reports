@@ -4,8 +4,8 @@
     - [Intended Audience](#intended-audience)
   - [Abastract](#abastract)
   - [Introduction](#introduction)
-  - [The Problem:](#the-problem)
-  - [The Solution:](#the-solution)
+  - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
+  - [The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
   - [References](#references)
 ### Purpose of this Solution Brief
 This document describes the transforming of the Telecom Roaming Agreement drafting and negotiation process into a digitalized version based on the transparency promoted by blockchain technology.
@@ -13,7 +13,13 @@ This document describes the transforming of the Telecom Roaming Agreement drafti
 The audience for this solution brief includes any vendors or users interested in promoting an efficient solution that ensures transparency in the drafting and negotiation of Roaming Agreements between Mobile Network Operators (MNOs).
 ## Abastract
 ## Introduction
-## The Problem:
-## The Solution:
+## The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.
+The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer. During the drafting phase of the Roaming Agreement the parties, i.e. the Mobile Network Operators (MNOs), go through a negotiation process that currently still uses asynchronous flows such as email or even regular mail for information exchange. This manual, slow and untrustworthy process has been the reason for the project to promote a transparent negotiation process that ensures the roaming agreement drafting using blockchain technology to record the interactions between MNOs, ensuring reliable traceability. 
+A recent study by GSMA [1] enables blockchain for Wholesale Roaming Initiative, however their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement.
+## The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.
 ## References
-1. GSMA, "International Roaming explained", online available: https://www.gsma.com/latinamerica/wp-content/uploads/2012/08/GSMA-Mobile-roaming-web-English.pdf, United Kingdom, 2012.
+  1. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
+  2. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Blockchain-based digitization of the roaming agreement drafting process", online available: https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521, September 2021.
+  3. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "NLP Engine to detect variables, standard clauses, variations, and customized texts", online available: https://medium.com/analytics-vidhya/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5, September 2021.2. 
+  4. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode design for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645, October 2021.
+  5. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode implementation for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645, November 2021.
