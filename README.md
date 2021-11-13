@@ -1,3 +1,4 @@
+# Decentralized ID and Access Management (DIAM) for IoT Networks
 - [Decentralized ID and Access Management (DIAM) for IoT Networks](#decentralized-id-and-access-management-diam-for-iot-networks)
   - [Purpose of this Solution Brief](#purpose-of-this-solution-brief)
   - [Intended Audience](#intended-audience)
@@ -6,7 +7,6 @@
 - [2. The Problem:](#2-the-problem)
 - [3. The Solution:](#3-the-solution)
 - [4. References](#4-references)
-# Decentralized ID and Access Management (DIAM) for IoT Networks
 ## Purpose of this Solution Brief
 This document describes a decentralized identity and access management (DIAM) system for IoT devices, based on open source blockchain frameworks from Hyperledger. This decentralized approach can help IoT providers build a secure and cost-effective environment to support millions of IoT devices in the near future.
 ## Intended Audience
