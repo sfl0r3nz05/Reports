@@ -93,12 +93,12 @@ The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer
 
 #### Chaincode implementation
 The chaincode implementation consists of 6 modules which are described below:
-1. Proxy: This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
-2. Organization: This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
-3. Agreement: This module contains all interactions related to the roaming agreement, allowing to add and update articles by specifying the articles variables values, variations selection and any proposed custom text. Also, this module handles article state transactions (e.g., proposed-to-accepted) and the possible proposed changes.
-4. Identity: This module is inserted inside the proxy and allows identity verification using the Client Identity Chaincode Library (cid).
-5. Util: This module contains common functionalities for the rest of the modules, e.g., UUID generation.
-6. Models: This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
+1. **Proxy**: This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
+2. **Organization**: This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
+3. **Agreement**: This module contains all interactions related to the roaming agreement, allowing to add and update articles by specifying the articles variables values, variations selection and any proposed custom text. Also, this module handles article state transactions (e.g., proposed-to-accepted) and the possible proposed changes.
+4. **Identity**: This module is inserted inside the proxy and allows identity verification using the Client Identity Chaincode Library (cid).
+5. **Util**: This module contains common functionalities for the rest of the modules, e.g., UUID generation.
+6. **Models**: This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
 
 The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that the chaincode methods were defined in Table 1, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is proposeAgreementInitiation, which has been defined as the proposal to initiate the Roaming Agreement drafting by one of the two participating MNOs, causing the transition from the initial state to the started_ra as shown in Figure:
 
