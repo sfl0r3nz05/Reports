@@ -31,14 +31,8 @@ Despite its importance, the drafting of roaming agreements faces two major short
 * Ensure traceability in the roaming agreement drafting process.
   
 ## The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.
-
-Telco blockchain revenue is estimated  to reach around  $1.8b of  $19.9b [3] by  2024.
-
-IoT devices collect, handle, and act on data as proxies for a wide range of users, such as a human, a government agency, or a multinational enterprise.
-With tens of billions of IoT devices to be connected over the next few years, numerous IoT devices may represent a single person or institution in multiple roles. And IoT devices may play roles that no one has yet envisioned.
-For example, with the rise of autonomous computing powered by machine learning, an IoT device may be able to change roles, ownership, or affiliations dynamically based on external triggers. IoT devices will likely communicate on an ad hoc basis with numerous entities without any pre-existing business relationships.
-Decentralized Identifiers (DIDs) enable a standards-based, globally interoperable identity system that puts IoT device owners in control. DIDs enable multiple identifiers to be created at will to help manage anonymity, auditability, correlation across contexts, privacy, revocability, and traceability.
-A decentralized ID management system removes the need for any central governing authority and makes way for new models of trust among organizations. All this provides more transparency, improves communications, and saves costs.
+Nowadays, blockchain emerges as an essential technology to ensure transparency, traceability and fine-grain analytics of Roaming Agreement drafting and negociation. This is because blockchain has the potential to transform business processes across all industries: it removes the need for "middlemen" and manual processes because it can ensure the validity of stored data (such as transactions). In this way, when created, this data is recognised as valid by all parties, and cannot be modified afterwards without making the change visible to all parties.
+Particularly, TELCO blockchain revenue is estimated to reach around $1.8b of $19.9b by 2024 [4]..
 ## Reference Architecture:.
 
 Figura general de arquitectura
@@ -59,9 +53,10 @@ The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
-  2. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
-  3. https://www.globenewswire.com/news-release/2019/10/02/1924300/0/en/Global-Blockchain-in-Telecom-Market-is-Set-to-Reach-USD-1-835-6-million-by-2024-Observing-a-CAGR-of-82-4-during-2019-2024-VynZ-Research.html
-  4. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Blockchain-based digitization of the roaming agreement drafting process", online available: https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521, September 2021.
-  5. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "NLP Engine to detect variables, standard clauses, variations, and customized texts", online available: https://medium.com/analytics-vidhya/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5, September 2021.2. 
-  6. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode design for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645, October 2021.
-  7. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode implementation for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-implementation-for-managing-the-drafting-of-roaming-agreements-d4ec7363a3d0, November 2021.
+  2. ROCCO Research, "The International Roaming Agreement", online available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/, 2017.
+  3. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
+  4. VynZ Research, "Global Blockchain in Telecom Market is Set to Reach USD 1,835.6 million by 2024, Observing a CAGR of 82.4% during 2019–2024", https://www.globenewswire.com/news-release/2019/10/02/1924300/0/en/Global-Blockchain-in-Telecom-Market-is-Set-to-Reach-USD-1-835-6-million-by-2024-Observing-a-CAGR-of-82-4-during-2019-2024-VynZ-Research.html
+  5. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Blockchain-based digitization of the roaming agreement drafting process", online available: https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521, September 2021.
+  6. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "NLP Engine to detect variables, standard clauses, variations, and customized texts", online available: https://medium.com/analytics-vidhya/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5, September 2021.2. 
+  7. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode design for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645, October 2021.
+  8. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode implementation for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-implementation-for-managing-the-drafting-of-roaming-agreements-d4ec7363a3d0, November 2021.
