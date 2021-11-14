@@ -11,9 +11,9 @@
   - [Solution Design Details.](#solution-design-details)
     - [NLP-Engine design](#nlp-engine-design)
     - [Chaincode design](#chaincode-design)
-    - [Implementation details.](#implementation-details)
-        - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
-      - [Chaincode Implementation lifecycle](#chaincode-implementation-lifecycle)
+  - [Implementation details.](#implementation-details)
+    - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
+    - [Chaincode Implementation lifecycle](#chaincode-implementation-lifecycle)
       - [Chaincode implementation details](#chaincode-implementation-details)
   - [References](#references)
   
@@ -78,15 +78,15 @@ As mentioned, the transition between states is due to the interaction between th
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Table1.png">
 
-### Implementation details.
+## Implementation details.
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
 
-##### Integration with Hyperledger Mentoring Programs.
+### Integration with Hyperledger Mentoring Programs.
 The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
 
-#### Chaincode Implementation lifecycle
+### Chaincode Implementation lifecycle
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
 
 #### Chaincode implementation details
