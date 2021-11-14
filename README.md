@@ -12,9 +12,9 @@
     - [NLP-Engine design](#nlp-engine-design)
     - [Chaincode design](#chaincode-design)
     - [Implementation details.](#implementation-details)
-      - [Implementation lifecycle](#implementation-lifecycle)
         - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
-      - [Chaincode implementation](#chaincode-implementation)
+      - [Chaincode Implementation lifecycle](#chaincode-implementation-lifecycle)
+      - [Chaincode implementation details](#chaincode-implementation-details)
   - [References](#references)
   
 ### Purpose of this Solution Brief
@@ -83,13 +83,13 @@ As mentioned, the transition between states is due to the interaction between th
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
 
-#### Implementation lifecycle
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
-
 ##### Integration with Hyperledger Mentoring Programs.
 The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
 
-#### Chaincode implementation
+#### Chaincode Implementation lifecycle
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
+
+#### Chaincode implementation details
 The chaincode implementation consists of 6 modules which are described below:
 1. **Proxy**: This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. **Organization**: This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
