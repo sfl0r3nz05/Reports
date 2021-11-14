@@ -80,11 +80,11 @@ As mentioned, the transition between states is due to the interaction between th
 
 ### Implementation details.
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
 
 #### Implementation lifecycle
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
 
 ##### Integration with Hyperledger Mentoring Programs.
 The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
