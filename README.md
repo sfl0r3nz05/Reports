@@ -81,7 +81,6 @@ As mentioned, the transition between states is due to the interaction between th
 ### Implementation details.
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram5.PNG">
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
 
@@ -105,7 +104,7 @@ The integration between the different modules takes place in each of the methods
 
 Figure 4 below shows the sequence diagram illustrating the relationship between the modules defined above.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram5.PNG">
 
 In this way, a registered MNO enables the drafting of a Roaming Agreement. Thus, the Proxy Module enables interactions with other modules. Firstly, the Identity Module allows verifying the MNO Identity. The Organization Module verifies whether the MNO exists, i.e. has been previously registered. Considering that the names of the two participating organizations and the Roaming Agreement name constitute the input arguments, the Agreements Module performs the following functionalities:
 
