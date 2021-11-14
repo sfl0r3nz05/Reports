@@ -2,7 +2,7 @@
 - [Blockchain-based digitization of the Roaming Agreement Drafting Process](#blockchain-based-digitization-of-the-roaming-agreement-drafting-process)
     - [Purpose of this Solution Brief](#purpose-of-this-solution-brief)
     - [Intended Audience](#intended-audience)
-  - [Abastract](#abastract)
+  - [Abstract](#abstract)
   - [Introduction](#introduction)
   - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
   - [The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
@@ -21,7 +21,7 @@
 This document describes the transforming of the Telecom Roaming Agreement drafting and negotiation process into a digitalized version based on the transparency promoted by blockchain technology.
 ### Intended Audience
 The audience for this solution brief includes any vendors or users interested in promoting an efficient solution that ensures transparency in the drafting and negotiation of Roaming Agreements between Mobile Network Operators (MNOs).
-## Abastract
+## Abstract
 The ever-growing number of IoT devices means data vulnerability is an ongoing risk. Existing centralized IoT ecosystems have led to concerns about security, privacy, and data use. This solution brief shows that a decentralized ID and access management (DIAM) system for IoT devices provides the best solution for those concerns, and that Hyperledger offers the best technology for such a system.
 ## Introduction
 Roaming operations ensure business continuity and ubiquitous service access to the end customer across various technology stacks including the new 5G and IoT technologies. Conceptually, Roaming refers to the capability for a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. Roaming services are an essential component of an operator’s cost model with critical opex and capex impacts. The back office part of this seamless extension of coverage is enabled by the process of wholesale Roaming Agreement, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
@@ -92,13 +92,34 @@ Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proy
 The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
 
 #### Chaincode implementation
+The chaincode implementation consists of 6 modules which are described below:
+1. Proxy: This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
+2. Organization: This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
+3. Agreement: This module contains all interactions related to the roaming agreement, allowing to add and update articles by specifying the articles variables values, variations selection and any proposed custom text. Also, this module handles article state transactions (e.g., proposed-to-accepted) and the possible proposed changes.
+4. Identity: This module is inserted inside the proxy and allows identity verification using the Client Identity Chaincode Library (cid).
+5. Util: This module contains common functionalities for the rest of the modules, e.g., UUID generation.
+6. Models: This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
+
+The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that the chaincode methods were defined in Table 1, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is proposeAgreementInitiation, which has been defined as the proposal to initiate the Roaming Agreement drafting by one of the two participating MNOs, causing the transition from the initial state to the started_ra as shown in Figure:
+
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram10.PNG">
+
+Figure 4 below shows the sequence diagram illustrating the relationship between the modules defined above.
+
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
+
+In this way, a registered MNO enables the drafting of a Roaming Agreement. Thus, the Proxy Module enables interactions with other modules. Firstly, the Identity Module allows verifying the MNO Identity. The Organization Module verifies whether the MNO exists, i.e. has been previously registered. Considering that the names of the two participating organizations and the Roaming Agreement name constitute the input arguments, the Agreements Module performs the following functionalities:
+
+1. Generation of the unique identifier for the list of Articles: articlesId
+2. Generation of the unique identifier for the roaming agreement: RAID.
+3. The started_ra event is emitted.
+4. The Status for the Roaming Agreement Negotiation is set as started_ra and contained as part of the emitted event.
+5. The Status for the Articles Negotiation is set as init.
+
+The main conclusion we can reach is that each method involves the verification, update, or generation of states, which are stored as parts of the data structures established for the chaincodes and traced thanks to the events emitted from each of the methods.
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
   2. ROCCO Research, "The International Roaming Agreement", online available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/, 2017.
   3. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
   4. VynZ Research, "Global Blockchain in Telecom Market is Set to Reach USD 1,835.6 million by 2024, Observing a CAGR of 82.4% during 2019–2024", https://www.globenewswire.com/news-release/2019/10/02/1924300/0/en/Global-Blockchain-in-Telecom-Market-is-Set-to-Reach-USD-1-835-6-million-by-2024-Observing-a-CAGR-of-82-4-during-2019-2024-VynZ-Research.html
-  5. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Blockchain-based digitization of the roaming agreement drafting process", online available: https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521, September 2021.
-  6. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "NLP Engine to detect variables, standard clauses, variations, and customized texts", online available: https://medium.com/analytics-vidhya/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5, September 2021.2. 
-  7. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode design for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645, October 2021.
-  8. Santiago Figueroa-Lorenzo, Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif, "Chaincode implementation for managing the drafting of roaming agreements", online available: https://medium.com/@sfl0r3nz05/chaincode-implementation-for-managing-the-drafting-of-roaming-agreements-d4ec7363a3d0, November 2021.
