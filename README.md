@@ -9,7 +9,7 @@
   - [Reference Architecture:.](#reference-architecture)
     - [Design details.](#design-details)
     - [Implementation details.](#implementation-details)
-    - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
+      - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
   - [References](#references)
 ### Purpose of this Solution Brief
 This document describes the transforming of the Telecom Roaming Agreement drafting and negotiation process into a digitalized version based on the transparency promoted by blockchain technology.
@@ -25,15 +25,11 @@ Roaming  operations  ensure  business  continuity  and  ubiquitous  service  acc
 The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent roaming agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone company (TELCO).
 
 ## The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.
-The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer. During the drafting phase of the Roaming Agreement the parties, i.e. the Mobile Network Operators (MNOs), go through a negotiation process that currently still uses asynchronous flows such as email or even regular mail for information exchange. This manual, slow and untrustworthy process has been the reason for the project to promote a transparent negotiation process that ensures the roaming agreement drafting using blockchain technology to record the interactions between MNOs, ensuring reliable traceability. 
-A recent study by GSMA [1] enables blockchain for Wholesale Roaming Initiative, however their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement.
-Such a framework should provide the following capabilities:
-* Unique universal identifiers compatible with the internet namespace convention
-* Device ownership and lifecycle management from manufacturing to retirement
-* Authentication and authorization
-* Governance of data access, provenance and privacy
-* Advertising of supported “services”
-* Ability to adapt and participate in various trust models
+Despite its importance, the drafting of roaming agreements faces two major shortcomings. On the one hand, authoritative voices such as [2], define the process of drafting and negotiating roaming agreements as a manual, slow and untrustworthy process. Secondly, although GSMA in a recent study has enabled trust mechanisms for Wholesale Roaming Initiative [3], their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement. Hence the need to establish a framework that provides capabilities such as:
+* Provide a fine-grained methodology that digitizes the Roaming agreement drafting process.
+* Promote a transparent negotiation process between MNOs.
+* Ensure traceability in the roaming agreement drafting process.
+  
 ## The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.
 
 Telco blockchain revenue is estimated  to reach around  $1.8b of  $19.9b [3] by  2024.
@@ -56,7 +52,9 @@ Figura general de arquitectura
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram4.PNG">
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram5.PNG">
 
-### Integration with Hyperledger Mentoring Programs.
+Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
+
+#### Integration with Hyperledger Mentoring Programs.
 The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
 
 ## References
