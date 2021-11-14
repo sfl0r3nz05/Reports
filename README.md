@@ -15,6 +15,8 @@
     - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
     - [Chaincode Implementation lifecycle](#chaincode-implementation-lifecycle)
       - [Chaincode implementation details](#chaincode-implementation-details)
+  - [Project challenges](#project-challenges)
+  - [Future reseach lines](#future-reseach-lines)
   - [References](#references)
   
 ### Purpose of this Solution Brief
@@ -115,6 +117,10 @@ In this way, a registered MNO enables the drafting of a Roaming Agreement. Thus,
 5. The Status for the Articles Negotiation is set as init.
 
 The main conclusion we can reach is that each method involves the verification, update, or generation of states, which are stored as parts of the data structures established for the chaincodes and traced thanks to the events emitted from each of the methods.
+
+## Project challenges
+
+## Future reseach lines
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
