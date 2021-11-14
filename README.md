@@ -13,8 +13,10 @@
     - [Chaincode design](#chaincode-design)
     - [Implementation details.](#implementation-details)
       - [Implementation lifecycle](#implementation-lifecycle)
-      - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
+        - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
+      - [Chaincode implementation](#chaincode-implementation)
   - [References](#references)
+  
 ### Purpose of this Solution Brief
 This document describes the transforming of the Telecom Roaming Agreement drafting and negotiation process into a digitalized version based on the transparency promoted by blockchain technology.
 ### Intended Audience
@@ -86,8 +88,10 @@ Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proy
 
 #### Implementation lifecycle
 
-#### Integration with Hyperledger Mentoring Programs.
+##### Integration with Hyperledger Mentoring Programs.
 The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
+
+#### Chaincode implementation
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
