@@ -28,12 +28,12 @@ The Roaming Agreement addresses the technical and commercial components necessar
 The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer. During the drafting phase of the Roaming Agreement the parties, i.e. the Mobile Network Operators (MNOs), go through a negotiation process that currently still uses asynchronous flows such as email or even regular mail for information exchange. This manual, slow and untrustworthy process has been the reason for the project to promote a transparent negotiation process that ensures the roaming agreement drafting using blockchain technology to record the interactions between MNOs, ensuring reliable traceability. 
 A recent study by GSMA [1] enables blockchain for Wholesale Roaming Initiative, however their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement.
 Such a framework should provide the following capabilities:
-• Unique universal identifiers compatible with the internet namespace convention
-• Device ownership and lifecycle management from manufacturing to retirement
-• Authentication and authorization
-• Governance of data access, provenance and privacy
-• Advertising of supported “services”
-• Ability to adapt and participate in various trust models
+* Unique universal identifiers compatible with the internet namespace convention
+* Device ownership and lifecycle management from manufacturing to retirement
+* Authentication and authorization
+* Governance of data access, provenance and privacy
+* Advertising of supported “services”
+* Ability to adapt and participate in various trust models
 ## The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.
 IoT devices collect, handle, and act on data as proxies for a wide range of users, such as a human, a government agency, or a multinational enterprise.
 With tens of billions of IoT devices to be connected over the next few years, numerous IoT devices may represent a single person or institution in multiple roles. And IoT devices may play roles that no one has yet envisioned.
