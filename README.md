@@ -110,15 +110,17 @@ Figure 4 below shows the sequence diagram illustrating the relationship between 
 
 In this way, a registered MNO enables the drafting of a Roaming Agreement. Thus, the Proxy Module enables interactions with other modules. Firstly, the Identity Module allows verifying the MNO Identity. The Organization Module verifies whether the MNO exists, i.e. has been previously registered. Considering that the names of the two participating organizations and the Roaming Agreement name constitute the input arguments, the Agreements Module performs the following functionalities:
 
-1. Generation of the unique identifier for the list of Articles: articlesId
-2. Generation of the unique identifier for the roaming agreement: RAID.
-3. The started_ra event is emitted.
-4. The Status for the Roaming Agreement Negotiation is set as started_ra and contained as part of the emitted event.
+1. Generation of the unique identifier for the list of Articles: *articlesId*
+2. Generation of the unique identifier for the roaming agreement: *RAID*.
+3. The *started_ra* event is emitted.
+4. The Status for the Roaming Agreement Negotiation is set as *started_ra* and contained as part of the emitted event.
 5. The Status for the Articles Negotiation is set as init.
 
 The main conclusion we can reach is that each method involves the verification, update, or generation of states, which are stored as parts of the data structures established for the chaincodes and traced thanks to the events emitted from each of the methods.
 
 ## Project challenges
+
+- NLP engine en vez de un NLP model
 
 ## Future reseach lines
 
