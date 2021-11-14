@@ -7,7 +7,10 @@
   - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
   - [The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
   - [Reference Architecture:.](#reference-architecture)
-    - [Design details.](#design-details)
+  - [Application lifecycle](#application-lifecycle)
+  - [Solution Design Details.](#solution-design-details)
+    - [NLP-Engine desing](#nlp-engine-desing)
+    - [Chaincode design](#chaincode-design)
     - [Implementation details.](#implementation-details)
       - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
   - [References](#references)
@@ -41,11 +44,34 @@ Despite the advantages of the technology, a blockchain process is not conceivabl
 
 Figura general de arquitectura
 
-### Design details.
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
+## Application lifecycle
+
+Figura general de arquitectura
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram2.PNG">
 
+## Solution Design Details.
+The design details are approached both from the NLP Engine point of view and from the Chaincode point of view.
+
+### NLP-Engine desing
+
+
+### Chaincode design
+From a design point of view, the project chaincode is defined by actions and statuses, where interactions through actions allow the transition between each of the statuses. The statuses represent the different phases and transitions starting with the enabling of a Mobile Network Operator (MNO) until it reaches the final signed Roaming Agreement with another counterparty, MNO. Therefore, it is necessary to put the focus on the statuses that govern the chaincode. Thus, the chaincode for Roaming Agreement negotiation consists of three stages: (1) Statuses for Roaming Agreement Negotiation, (2) Statuses for the Articles Negotiation and (3) Statuses for the Article Drafting.
+
+The Statuses for Roaming Agreement Negotiation allows the negotiation to be conducted at the highest level, to determine when the final version Roaming Agreement is reached. Without being too rigorous with each of the transitions that take place, the following figure shows each of the states that make up this stage. Thus, in the initial status, the MNOs must be enrolled, which enables either of the two MNOs participating in the negotiation to propose to initiate the Roaming Agreement drafting process. Once the initiation of the agreement is confirmed, the negotiation of the drafting of articles and sub-articles proceeds, where the other stages are involved, ending with a proposal and confirmation of acceptance of the Roaming Agreement.
+
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Roaming_Agreement_State_v03.drawio.PNG">
+
+The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the Roaming Agreement have reached the status of being accepted by both parties. Thus, as shown in the figure below, belonging to the Statuses for the Article Drafting stage, once an article is added, it goes through a transition of proposed changes until finally the article is accepted by both parties.
+
+Imagen 2
+
+However, the fact that all articles are in accepted status by both MNOs at a given time does not necessarily imply that the Roaming Agreement is close to being reached, but both entities may intend to add a new article despite that all currently added articles are in an accepted status. For this purpose, the Statuses for the Articles Negotiation stage exits. As shown in the following figure, the function of this stage is to control the status of all articles added. For this, it establishes a transient status that determines that all added articles are accepted. On the one hand, this stage allows continuing the article drafting process if a new article is proposed. On the other hand, this stage allows moving towards the achievement of the final version of the Roaming Agreement.
+
+Imagen 3
+
 ### Implementation details.
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram4.PNG">
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram5.PNG">
