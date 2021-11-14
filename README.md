@@ -25,6 +25,7 @@ A recent study by GSMA [1] enables blockchain for Wholesale Roaming Initiative, 
 ## Reference Architecture:.
 
 ### Design details.
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
 
 ### Implementation details.
 
