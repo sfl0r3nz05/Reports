@@ -24,10 +24,16 @@ A recent study by GSMA [1] enables blockchain for Wholesale Roaming Initiative, 
 
 ## Reference Architecture:.
 
+Figura general de arquitectura
+
 ### Design details.
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram2.PNG">
 
 ### Implementation details.
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram4.PNG">
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram5.PNG">
 
 ### Integration with Hyperledger Mentoring Programs.
 
