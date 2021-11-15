@@ -42,7 +42,7 @@ Roaming operations ensure business continuity and ubiquitous service access to t
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram6.PNG">
 
-The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent Roaming Agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone company (TELCO).
+The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent Roaming Agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone companies (TELCO).
 
 ## Roaming Agreement Overview.
 To standardize the legal commercial aspects of the Roaming Agreement, the GSM Association broadly outlines the content of such Roaming Agreement in standardized form for its members [2]. Thus, based on these GSMA-defined template standards, MNOs should be concerned with conducting the Roaming Agreement drafting process as part of a negotiation process. On the one hand, during the drafting process of the Roaming Agreement, the parties should analyze the articles contained in the standard templates to determine whether:
@@ -115,7 +115,7 @@ As mentioned, the transition between states is due to the interaction between th
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Table1.PNG">
 
 ## Implementation details.
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram1.PNG">
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram13.PNG">
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
 
@@ -204,6 +204,7 @@ One of the most remarkable points of this project is the integration with other 
 ## Future works
 1. The Natural Language Processing phase has been carried out from the construction of a NLP engine, so a future line of work is the construction of a Model based on open source libraries such as Spacy.
 2. A drafting library in JavaScript, packaged and published as an NPM package.
+3. Full API monitoring with Prmetheus and Grafana.
 
 ## Publications that support the project
 The project is supported by two types of publications Medium Articles and Scientific Contributions.
