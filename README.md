@@ -6,7 +6,8 @@
   - [Introduction](#introduction)
   - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
   - [The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
-  - [Reference Architecture:.](#reference-architecture)
+  - [Roaming Agreement Overview.](#roaming-agreement-overview)
+  - [Reference Architecture.](#reference-architecture)
   - [Application lifecycle](#application-lifecycle)
   - [Solution Design Details.](#solution-design-details)
     - [NLP-Engine design](#nlp-engine-design)
@@ -46,7 +47,21 @@ Despite the advantages of the technology, a blockchain process is not conceivabl
 1. Build a library of drafting items with a set of variables to be extracted from available templates and previous roaming agreements using the NLP Natural Language Processing process
 2. Translate the drafting and negotiation process as a blockchain code in Blockchain to digitize the process and provide a maintainable and actionable copy of the agreement.
 
-## Reference Architecture:.
+## Roaming Agreement Overview.
+To standardize the legal commercial aspects of the Roaming Agreement, the GSM Association broadly outlines the content of such Roaming Agreement in standardized form for its members [4]. Thus, during the drafting process of the agreement, the parties should analyze the articles contained in the standard templates to determine whether:
+
+1. Leave an article as found in the template thereby establishing a standard clause.
+2. Introduce certain variations in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies, and so on concerning the original text, i.e., the GSMA templates.
+3. Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts.
+4. Specify the value of certain variables that are found in a certain text, such as dates, names of entities, amounts, and others.
+
+In adddtion, the lifecycle of the Roaming Agreement negotiation process is presented as the compilation of a set of best practices integrated into 7 phases. These phases do not represent standards or rules that must be followed in a mandatory way.
+
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
+
+The conclusion reached this point lies in the fact that the process of drafting the Roaming Agreement is mostly very ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. While other digital platforms also offer a digitized version of this process, yet these platforms lack the transparency and auditability that blockchain solutions can provide. The digitalization of the drafting and negotiation process of Roaming Agreements using blockchain technology such as Hyperledger Fabric Blockchain can provide transparency and auditability in capturing all the interactions between the parties.
+
+## Reference Architecture.
 
 Figura general de arquitectura
 
@@ -128,4 +143,4 @@ The main conclusion we can reach is that each method involves the verification, 
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
   2. ROCCO Research, "The International Roaming Agreement", online available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/, 2017.
   3. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
-  4. VynZ Research, "Global Blockchain in Telecom Market is Set to Reach USD 1,835.6 million by 2024, Observing a CAGR of 82.4% during 2019–2024", https://www.globenewswire.com/news-release/2019/10/02/1924300/0/en/Global-Blockchain-in-Telecom-Market-is-Set-to-Reach-USD-1-835-6-million-by-2024-Observing-a-CAGR-of-82-4-during-2019-2024-VynZ-Research.html
+  4. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
