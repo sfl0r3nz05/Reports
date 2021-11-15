@@ -4,9 +4,9 @@
     - [Intended Audience](#intended-audience)
   - [Abstract](#abstract)
   - [Introduction](#introduction)
+  - [Roaming Agreement Overview.](#roaming-agreement-overview)
   - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
   - [The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
-  - [Roaming Agreement Overview.](#roaming-agreement-overview)
   - [Reference Architecture.](#reference-architecture)
   - [Application lifecycle](#application-lifecycle)
   - [Solution Design Details.](#solution-design-details)
@@ -23,7 +23,7 @@
       - [Chaincode implementation details](#chaincode-implementation-details)
     - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
   - [Project challenges](#project-challenges)
-  - [Future research lines](#future-research-lines)
+  - [Future works](#future-works)
   - [References](#references)
   
 ### Purpose of this Solution Brief
@@ -39,8 +39,21 @@ Roaming operations ensure business continuity and ubiquitous service access to t
 
 The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent roaming agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone company (TELCO).
 
+## Roaming Agreement Overview.
+To standardize the legal commercial aspects of the Roaming Agreement, the GSM Association broadly outlines the content of such Roaming Agreement in standardized form for its members [2]. Thus, based on these GSMA-defined template standards, MNOs should be concerned with conducting the roaming agreement drafting process as part of a negotiation process. On the one hand, during the drafting process of the roaming agreement, the parties should analyze the articles contained in the standard templates to determine whether:
+
+1. Leave an article as found in the template thereby establishing a standard clause.
+2. Introduce certain variations in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies, and so on concerning the original text, i.e., the GSMA templates.
+3. Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts.
+4. Specify the value of certain variables that are found in a certain text, such as dates, names of entities, amounts, and others.
+
+On the other hand, the lifecycle of the Roaming Agreement negotiation process is presented as the compilation of a set of best practices integrated into 7 phases. These phases do not represent standards or rules that must be followed in a mandatory way.
+
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
+
 ## The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.
-Despite its importance, the drafting of roaming agreements faces two major shortcomings. On the one hand, authoritative voices such as [2], define the process of drafting and negotiating roaming agreements as a manual, slow and untrustworthy process. Secondly, although GSMA in a recent study has enabled trust mechanisms for Wholesale Roaming Initiative [3], their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement. Hence the need to establish a framework that provides capabilities such as:
+Despite its importance, the drafting of roaming agreements faces two major shortcomings. On the one hand, authoritative voices such as [3], define the process of drafting and negotiating roaming agreements as a manual, slow and untrustworthy process, since it is mostly very ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. Secondly, although GSMA in a recent study has enabled trust mechanisms for Wholesale Roaming Initiative [4], their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement. Hence the need to establish a framework that provides capabilities such as:
+
 * Provide a fine-grained methodology that digitizes the Roaming agreement drafting process.
 * Promote a transparent negotiation process between MNOs.
 * Ensure traceability in the roaming agreement drafting process.
@@ -52,20 +65,6 @@ Despite the advantages of the technology, a blockchain process is not conceivabl
  
 1. Build a library of drafting items with a set of variables to be extracted from available templates and previous roaming agreements using the NLP Natural Language Processing process
 2. Translate the drafting and negotiation process as a blockchain code in Blockchain to digitize the process and provide a maintainable and actionable copy of the agreement.
-
-## Roaming Agreement Overview.
-To standardize the legal commercial aspects of the Roaming Agreement, the GSM Association broadly outlines the content of such Roaming Agreement in standardized form for its members [4]. Thus, during the drafting process of the agreement, the parties should analyze the articles contained in the standard templates to determine whether:
-
-1. Leave an article as found in the template thereby establishing a standard clause.
-2. Introduce certain variations in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies, and so on concerning the original text, i.e., the GSMA templates.
-3. Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts.
-4. Specify the value of certain variables that are found in a certain text, such as dates, names of entities, amounts, and others.
-
-In adddtion, the lifecycle of the Roaming Agreement negotiation process is presented as the compilation of a set of best practices integrated into 7 phases. These phases do not represent standards or rules that must be followed in a mandatory way.
-
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
-
-The conclusion reached this point lies in the fact that the process of drafting the Roaming Agreement is mostly very ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. While other digital platforms also offer a digitized version of this process, yet these platforms lack the transparency and auditability that blockchain solutions can provide. The digitalization of the drafting and negotiation process of Roaming Agreements using blockchain technology such as Hyperledger Fabric Blockchain can provide transparency and auditability in capturing all the interactions between the parties.
 
 ## Reference Architecture.
 
@@ -186,10 +185,11 @@ The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer
 
 - NLP engine en vez de un NLP model
 
-## Future research lines
+## Future works
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
-  2. ROCCO Research, "The International Roaming Agreement", online available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/, 2017.
-  3. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
-  4. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
+  2. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
+  3. ROCCO Research, "The International Roaming Agreement", online available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/, 2017.
+  4. Shamit Bhat, "Blockchain for Wholesale Roaming Initiative", online available: https://www.gsma.com/newsroom/wp-content/uploads//GSMA-Blockchain-for-Wholesale-Roaming-MVP-Report.pdf, October 2021.
+  
