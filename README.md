@@ -13,9 +13,15 @@
     - [NLP-Engine design](#nlp-engine-design)
     - [Chaincode design](#chaincode-design)
   - [Implementation details.](#implementation-details)
-    - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
+    - [NLP Implementation](#nlp-implementation)
+    - [Detection of Variables](#detection-of-variables)
+    - [Analysis based on Amazon Comprehend](#analysis-based-on-amazon-comprehend)
+    - [Comparisons of sub-articles](#comparisons-of-sub-articles)
+    - [Analysis of Similarities](#analysis-of-similarities)
+      - [Populate the file with the classification of articles/sub-articles](#populate-the-file-with-the-classification-of-articlessub-articles)
     - [Chaincode Implementation lifecycle](#chaincode-implementation-lifecycle)
       - [Chaincode implementation details](#chaincode-implementation-details)
+    - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
   - [Project challenges](#project-challenges)
   - [Future reseach lines](#future-reseach-lines)
   - [References](#references)
@@ -67,6 +73,8 @@ Figura general de arquitectura
 
 ## Application lifecycle
 
+Decir que el NLP engine termina formando un template que sirve como base pero que puede ser modificado.
+
 Figura general de arquitectura
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram2.PNG">
 
@@ -74,7 +82,14 @@ Figura general de arquitectura
 The design details are approached both from the NLP Engine point of view and from the Chaincode point of view.
 
 ### NLP-Engine design
+To determine as accurately as possible the presence of these four characteristics as part of each of the articles that make up the roaming agreement in this project, a tool for text processing and analysis based on Natural Language Processing (NLP) has been designed, which is hereinafter referred to as the NLP engine.
 
+The logic designed for the NLP Engine has two approaches: detection and comparison.
+
+- Detection represents the location of variables in the Roaming Agreement.
+- Comparison is performed between each sub-article present in the Roaming Agreement concerning the sub-articles present in the GSMA template.
+  
+While a near-total coincidence between texts at the sub-article level represents a standard clause, a near-zero coincidence between texts (or simply the non-existence of the sub-article) represents a customized text. The intermediate case is represented by the variation where there is a high coincidence and the differences are given by the presence of variables such as MNO, date, currencies, etc.
 
 ### Chaincode design
 From a design point of view, the project chaincode is defined by actions and statuses, where interactions through actions allow the transition between each of the statuses. The statuses represent the different phases and transitions starting with the enabling of a Mobile Network Operator (MNO) until it reaches the final signed Roaming Agreement with another counterparty, MNO. Therefore, it is necessary to put the focus on the statuses that govern the chaincode. Thus, the chaincode for Roaming Agreement negotiation consists of three stages: (1) Statuses for Roaming Agreement Negotiation, (2) Statuses for the Articles Negotiation and (3) Statuses for the Article Drafting.
@@ -100,8 +115,39 @@ As mentioned, the transition between states is due to the interaction between th
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
 
-### Integration with Hyperledger Mentoring Programs.
-The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
+### NLP Implementation
+The following figure shows the overall architecture of the NLP Engine that integrates over a docker infrastructure, establishing as inputs the Roaming Agreement, as well as the GSMA templates; as processing layer the logic associated to the NLP Engine and as output the classification of articles in of standard clauses, variations, customized texts, and variables.
+
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram12.PNG">
+
+### Detection of Variables
+Variable detection goes through the following steps:
+1. A parsing of the Roaming Agreement document converted into text is carried out, removing undesired characters.
+2. The parsed text is divided into groups of 100 words, from which entities, key phrases, and syntax are detected using the Amazon Comprehend tool [1].
+3. Post-processing mechanisms are applied based on the combination of the detected elements, i.e., entities, key phrases, and syntax.
+
+### Analysis based on Amazon Comprehend
+Entities, key phrases, and syntax are detected using Amazon Comprehend Tool. Each piece of text (100 words) sent to the Amazon Comprehend tool via REST API returns a list of objects as shown in expression (1) when entities have been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. Expression (2) constitutes an object of the list of objects returned by Amazon Comprehend when key phrases are detected. Expression (3) also constitutes an object of the list of objects returned by Amazon Comprehend when syntax analysis is performed.
+```
+{‘BeginOffset’:0,’EndOffset’:8,’Score’:0.43067169189453125,’Text’:’Proximus’,’Type’:’ORGANIZATION’} (1)
+{‘BeginOffset’:0,’EndOffset’:24, ‘Score’:0.956875205039978,’Text’:’Proximus reference offer’} (2)
+{‘BeginOffset’: 0,’EndOffset’:8,’PartOfSpeech’:{‘Score’:0.9324524402618408,’Tag’:’PROPN’} (3)
+```
+
+### Comparisons of sub-articles
+To establish comparisons between text elements a pre-processing step is necessary:
+1. A parsing of the Roaming Agreement document converted into text is carried out, removing undesired characters.
+2. The parsed text is divided into articles, which in turn are divided into sub-articles.
+3. The sub-articles are used to establish the degree of similarity concerning the reference represented by the GSMA template.
+4. In the case that from the similarity analysis it is determined that the sub-article is a variation, then we proceed to look for the respective variables within the variations.
+
+### Analysis of Similarities
+Similarity analysis, in this project, consists of comparing the sub-articles of the Roaming Agreement with the sub-articles used as reference. The similarity analysis is based on Jaccard’s similarity [2], which has been selected because of its simplicity of implementation for this stage of the project. However, the way the code of this project has been developed allows using other similarity types such as cosine similarity. Expression (4) also constitutes an object of the list of objects returned by Jaccard similarity when the sub-article 1.1 is compared with one Roaming Agreement concerning the sub-article present in the GSMA template.
+{‘id’: ‘1.1’, ‘similarity’: 0.7380952380952381} (4)
+
+#### Populate the file with the classification of articles/sub-articles
+
+Once the determination of the variables is performed, the subsequent similarity analysis to classify sub-articles into standard clauses, variations, and customized texts and the existing variables within the variations have been identified, further processing is carried out to populate the file with the classification of articles/sub-articles.
 
 ### Chaincode Implementation lifecycle
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
@@ -132,6 +178,9 @@ In this way, a registered MNO enables the drafting of a Roaming Agreement. Thus,
 5. The Status for the Articles Negotiation is set as init.
 
 The main conclusion we can reach is that each method involves the verification, update, or generation of states, which are stored as parts of the data structures established for the chaincodes and traced thanks to the events emitted from each of the methods.
+
+### Integration with Hyperledger Mentoring Programs.
+The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer: Analyzing Hyperledger Fabric Ledger, Transactions
 
 ## Project challenges
 
