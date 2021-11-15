@@ -115,6 +115,22 @@ As mentioned, the transition between states is due to the interaction between th
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Table1.PNG">
 
 ## Implementation details.
+As shown in Figure XXX, the project implementation is based on a set of microservices using the Docker infrastructure as a base. By way of example, 3 entities have been established, 2 MNOs and the GSMA as the central authority that on the one hand enables the MNOs and on the other hand, monitors each of the services established in the project. The following is a brief description of the services maintained by GSMA:
+**Frontend**: User-friendly interface to carry out the negotiation of roaming agreement drafting.
+**Backend API**: Container containing the API that allows invoking transactions from the Frontend.
+**NLP-Engine**: Infrastructure designed with the objective of performing a first processing of pre Itinerancy Agreement between two MNOs that will serve as a template for the drafting and negotiation process on the defined blockchain infrastructure.
+**Kibana**: Centralized graphical interface used for the purpose of monitoring the Hyperledger Fabric Blockchain network.
+**Elasticsearch**: Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.
+**Beat**: Agent used for collecting and capturing data from peers and transferring that information to Elasticsearch.
+**Grafana**: Tool used to visualize the API monitoring process.
+**Prometheus**: Tool used to collect data from the API and send to Grafana.
+**Swagger**: Tool used for API documentation.
+
+The following is a brief description of the services common for all participants:
+**Orderer**: Orderer constitutes the mechanism by which applications and peers interact with each other to ensure that every peer’s ledger is kept consistent with each other.
+**Peer**: Peers form the basis for a blockchain network, hosting ledgers and smart contracts which can be queried and updated by peer-connected applications.
+**Channel**: Channels constitute a mechanism by which a set of components within a blockchain network can communicate and transact privately.
+
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram13.PNG">
 
 Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
