@@ -23,6 +23,9 @@
       - [Chaincode implementation details](#chaincode-implementation-details)
     - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
   - [Future works](#future-works)
+  - [Publications that support the project](#publications-that-support-the-project)
+    - [Medium Articles that support the project](#medium-articles-that-support-the-project)
+    - [Scientific Contributions that support the project](#scientific-contributions-that-support-the-project)
   - [References](#references)
   
 ### Purpose of this Solution Brief
@@ -201,6 +204,21 @@ One of the most remarkable points of this project is the integration with other 
 ## Future works
 1. The Natural Language Processing phase has been carried out from the construction of a NLP engine, so a future line of work is the construction of a Model based on open source libraries such as Spacy.
 2. A drafting library in JavaScript, packaged and published as an NPM package.
+
+## Publications that support the project
+The project is supported by two types of publications Medium Articles and Scientific Contributions.
+
+### Medium Articles that support the project
+The project has been documented through the following Medium articles:
+
+1. [Blockchain-based digitization of the roaming agreement drafting process](https://medium.com/@sfl0r3nz05/blockchain-based-digitization-of-the-roaming-agreement-drafting-process-dec003923521)
+2. [NLP Engine to detect variables, standard clauses, variations, and customized texts](https://medium.com/@sfl0r3nz05/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5)
+3. [Chaincode design for managing the drafting of roaming agreements](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645)
+4. [Chaincode implementation for managing the drafting of roaming agreements](https://medium.com/@sfl0r3nz05/chaincode-implementation-for-managing-the-drafting-of-roaming-agreements-d4ec7363a3d0)
+
+### Scientific Contributions that support the project
+1. A Natural Language Processing Approach for the Digitalization of Roaming Agreements
+   - Sent to the Conference: [ILCICT 2021](https://lit.ly/en/ilcict/) (Current status): Under review
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
