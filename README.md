@@ -23,7 +23,7 @@
       - [Chaincode implementation details](#chaincode-implementation-details)
     - [Integration with Hyperledger Mentoring Programs.](#integration-with-hyperledger-mentoring-programs)
   - [Project challenges](#project-challenges)
-  - [Future reseach lines](#future-reseach-lines)
+  - [Future research lines](#future-research-lines)
   - [References](#references)
   
 ### Purpose of this Solution Brief
@@ -186,7 +186,7 @@ The Filebeat-Agent is based on the Linux Foundation Project: Blockchain Analyzer
 
 - NLP engine en vez de un NLP model
 
-## Future reseach lines
+## Future research lines
 
 ## References
   1. I. Tanaka, “Volte roaming and interconnection standard technology”, NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37–41, 2013.
