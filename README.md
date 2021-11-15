@@ -133,7 +133,7 @@ The following is a brief description of the services common for all participants
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram13.PNG">
 
-Toda la arquitectura desplegada docker ELK, ETC, cuña para hablar del otro proyecto
+As these are the two most important parts of the project development, we will now focus on the implementation of both the NLP engine and chaincode.
 
 ### NLP Implementation
 The **Figure XXX** shows the overall architecture of the NLP Engine that integrates over a docker infrastructure, establishing as inputs the Roaming Agreement, as well as the GSMA templates; as processing layer the logic associated to the NLP Engine and as output the classification of articles in of standard clauses, variations, customized texts, and variables.
