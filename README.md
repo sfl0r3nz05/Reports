@@ -83,14 +83,12 @@ The established objectives are intended to be achieved on the basis of the infra
 
 **Figure 3**: Reference Architecture.
 
-
-
 ## Application lifecycle
 Once the reference architecture has been defined, including the main components and functionalities that are part of the project, the base life cycle of the application is defined. 
 
-**Figure 4**
-
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram2.PNG">
+
+**Figure 4**: Application lifecycle.
 
 ## Solution Design Details.
 The design details are approached both from the NLP Engine point of view and from the Chaincode point of view.
