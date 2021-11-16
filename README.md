@@ -84,9 +84,9 @@ The established objectives are intended to be achieved on the basis of the infra
 **Figure 3**: Reference Architecture.
 
 ## Application lifecycle
-Once the reference architecture has been defined, including the main components and functionalities that are part of the project, the base life cycle of the application is defined. 
+Once the reference architecture has been defined, including the main components and functionalities that are part of the project, the base lifecycle of the application is defined **Figure 4** shows a first approximation of the application life cycle involving the three entities mentioned above. In this sense, four stages have been defined as part of the life cycle. The first one where the GSMA enables the MNO and has a direct participation in the MNO Registration process. The second stage involves the proposal and acceptance to conduct the negotiation process. The third stage is part of the drafting of the roaming agreement, which, due to its complexity, is subsequently analyzed at both the design and implementation levels. Finally, the fourth stage consists of the proposal to reach an agreement, as well as acceptance of the scope of the agreement.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram2.PNG">
+<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram15.PNG">
 
 **Figure 4**: Application lifecycle.
 
