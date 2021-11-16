@@ -38,9 +38,11 @@ The audience for this solution brief includes any vendors or users interested in
 The project looks at how to facilitate the process of Telecom Roaming Agreements drafting and negotiation. The project looks at first constructing a library of drafting articles with a set of variables that will be extracted from the available templates and previous Roaming Agreements using Natural Language Processing process NLP. The second part will be towards translating the drafting and negotiation process as a chaincode on Blockchain to digitalize the process and provide a maintainable and actionable copy of the agreement. The project focuses on how to be able to digitalize the legal process and make it automated through smart contracts to be more efficient and less error prone.
 
 ## Introduction
-Roaming operations ensure business continuity and ubiquitous service access to the end customer across various technology stacks including the new 5G and IoT technologies. Conceptually, Roaming refers to the capability for a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. Roaming services are an essential component of an operator’s cost model with critical opex and capex impacts. The back office part of this seamless extension of coverage is enabled by the process of wholesale Roaming Agreement, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
+Roaming operations ensure business continuity and ubiquitous service access to the end customer across various technology stacks including the new 5G and IoT technologies. As **Figure 1** shows, Roaming refers to the capability for a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. Roaming services are an essential component of an operator’s cost model with critical opex and capex impacts. The back office part of this seamless extension of coverage is enabled by the process of wholesale Roaming Agreement, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram6.PNG">
+
+**Figure 1**: Roaming Agreement definition.
 
 The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent Roaming Agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone companies (TELCO).
 
@@ -73,13 +75,11 @@ Despite the advantages of the technology, a blockchain process is not conceivabl
 
 ## Reference Architecture.
 
-Figura general de arquitectura
+The established objectives are intended to be achieved on the basis of the infrastructure shown in **Figure XXX**.
 
 ## Application lifecycle
+Once the reference architecture has been defined, including the main components and functionalities that are part of the project, the base life cycle of the application is defined.
 
-Decir que el NLP engine termina formando un template que sirve como base pero que puede ser modificado.
-
-Figura general de arquitectura
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram2.PNG">
 
 ## Solution Design Details.
@@ -221,6 +221,9 @@ One of the most remarkable points of this project is the integration with other 
 1. The Natural Language Processing phase has been carried out from the construction of a NLP engine, so a future line of work is the construction of a Model based on open source libraries such as Spacy.
 2. A drafting library in JavaScript, packaged and published as an NPM package.
 3. Full API monitoring with Prmetheus and Grafana.
+4. Contextualization of the traceability of the Roaming Agreement negotiation between two MNOs through a visualization tool.
+5. Definition and establishment of an audit and accountability layer for the system.
+
 
 ## Publications that support the project
 The project is supported by two types of publications Medium Articles and Scientific Contributions.
