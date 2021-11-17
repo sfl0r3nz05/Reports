@@ -90,11 +90,13 @@ Despite the advantages of the technology, a blockchain process is not conceivabl
 
 ## Reference Architecture.
 
-The established objectives are intended to be achieved on the basis of the infrastructure shown in **Figure 3**, which includes not only the participating entities but also the functionalities they perform throughout the application lifecycle. First, the entities participating in an agreement are composed of two MNOs and GSMA as the administrator. Among the functions they perform in common are the maintenance of the Hyperledger Fabric Blockchain network and participation in the network consensus, so that each of the three entities will contain a peer node with the ledger and chaincode and an ordering node. Likewise, all entities will be linked to the same channel.  In addition to the common functions, there are functions that the MNOs perform among themselves and others that are only performed by the GSMA. Thus, while the MNOs negotiate and draft the Roaming Agreement among themselves, maintaining the privacy of the information, the GSMA is in charge of the Registration of MNOs, the Network Monitoring and the Audit and Accountability of the Roaming Agreement conducted between two MNOs. In this regard, MNOs are supported by a Natural Language Processing (NLP) Engine and User Interfaces. Although the latter functionalities are used by the MNOs, they are maintained by the GSMA.
+The established objectives are intended to be achieved on the basis of the infrastructure shown in **Figure 3**, which includes not only the participating entities but also the functionalities they perform throughout the application lifecycle. First, the entities participating in an agreement are composed of two MNOs and GSMA as the administrator. Among the functions they perform in common are the maintenance of the Hyperledger Fabric Blockchain network and participation in the network consensus, so that each of the three entities will contain a peer node with the ledger and chaincode and an ordering node. Likewise, all entities will be linked to the same channel.
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram14.PNG">
 
 **Figure 3**: Reference Architecture.
+
+In addition to the common functions, there are functions that the MNOs perform among themselves and others that are only performed by the GSMA. Thus, while the MNOs negotiate and draft the Roaming Agreement among themselves, maintaining the privacy of the information and uses the NLP Engine to create a template to be used as part of the drafting process, the GSMA is in charge of the Registration of MNOs, the Network Monitoring and the Audit and Accountability of the Roaming Agreement conducted between the two MNOs. In this regard, MNOs are supported by a Natural Language Processing (NLP) Engine. Although the latter functionalities are used by the MNOs, they are maintained by the GSMA.
 
 ## Application lifecycle
 
