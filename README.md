@@ -1,8 +1,8 @@
 # Blockchain-based digitization of the Roaming Agreement Drafting Process
 - [Blockchain-based digitization of the Roaming Agreement Drafting Process](#blockchain-based-digitization-of-the-roaming-agreement-drafting-process)
-    - [Purpose of this Solution Brief](#purpose-of-this-solution-brief)
-    - [Intended Audience](#intended-audience)
-  - [Abstract](#abstract)
+    - [I. Purpose of this Solution Brief](#i-purpose-of-this-solution-brief)
+    - [II. Intended Audience](#ii-intended-audience)
+  - [1. Abstract](#1-abstract)
   - [Introduction](#introduction)
   - [Roaming Agreement Overview.](#roaming-agreement-overview)
   - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
@@ -34,17 +34,17 @@
     - [Scientific Contributions that support the project](#scientific-contributions-that-support-the-project)
   - [References](#references)
   
-### Purpose of this Solution Brief
+### I. Purpose of this Solution Brief
 
-This document describes the transforming of the Telecom Roaming Agreement drafting and negotiation process into a digitized version based on the transparency promoted by blockchain technology.
+This document describes the solution design for a proof of concept project that looks at transforming the Telecom Roaming Agreement drafting and negotiation process into a digitized version based on the transparency promoted by blockchain technology.
 
-### Intended Audience
+### II. Intended Audience
 
-The audience for this solution briefly includes any vendors or users interested in promoting an efficient solution that ensures transparency in the drafting and negotiation of Roaming Agreements between Mobile Network Operators (MNOs).
+The intended audience of this solution includes any vendors or users interested in promoting an efficient solution that ensures transparency in the drafting and negotiation of Roaming Agreements between Mobile Network Operators (MNOs).
 
-## Abstract
+## 1. Abstract
 
-The process of drafting the Roaming Agreement is mostly very ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. For this reason, this project looks at how to facilitate the process of Telecom Roaming Agreement and negotiation. The project looks at first constructing a library of drafting articles with a set of variables that will be extracted from the available templates and previous Roaming Agreement Natural Language Processing process NLP. The second part will be towards translating the drafting and negotiation process as a chaincode on Blockchain to digitalize the process and provide a maintainable and actionable copy of the agreement. The project focuses on how to be able to digitalize the legal process and make it automated through smart contracts to be more efficient and less error prone.
+The process of drafting the Roaming Agreement is mostly highly ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. For this reason, this project looks at how to facilitate the process of Telecom Roaming Agreement and negotiation. The project looks at constructing a library of drafting articles with a set of variables that will be extracted from the available templates and previous Roaming Agreement documents using Natural Language Processing (NLP) methods. The second part presents the approach of translating the drafting and negotiation process into a chaincode logic on Blockchain to digitalize the process and provide a maintainable and actionable copy of the agreement. The project focuses on how to be able to digitalize the legal process and make it automated through smart contracts to be more efficient and less error prone.
 
 ## Introduction
 
