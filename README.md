@@ -3,10 +3,10 @@
     - [I. Purpose of this Solution Brief](#i-purpose-of-this-solution-brief)
     - [II. Intended Audience](#ii-intended-audience)
   - [1. Abstract](#1-abstract)
-  - [Introduction](#introduction)
-  - [Roaming Agreement Overview.](#roaming-agreement-overview)
-  - [The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
-  - [The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
+  - [2. Introduction](#2-introduction)
+  - [3. Roaming Agreement Overview.](#3-roaming-agreement-overview)
+  - [4. The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.](#4-the-problem-methods-and-mechanisms-currently-available-for-drafting-and-negotiating-roaming-agreements)
+  - [5. The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#5-the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
   - [Reference Architecture.](#reference-architecture)
   - [Application lifecycle](#application-lifecycle)
   - [Solution Design Details.](#solution-design-details)
@@ -46,44 +46,43 @@ The intended audience of this solution includes any vendors or users interested 
 
 The process of drafting the Roaming Agreement is mostly highly ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. For this reason, this project looks at how to facilitate the process of Telecom Roaming Agreement and negotiation. The project looks at constructing a library of drafting articles with a set of variables that will be extracted from the available templates and previous Roaming Agreement documents using Natural Language Processing (NLP) methods. The second part presents the approach of translating the drafting and negotiation process into a chaincode logic on Blockchain to digitalize the process and provide a maintainable and actionable copy of the agreement. The project focuses on how to be able to digitalize the legal process and make it automated through smart contracts to be more efficient and less error prone.
 
-## Introduction
+## 2. Introduction
 
-Roaming operations ensure business continuity and ubiquitous service access to the end customer across various technology stacks including the new 5G and IoT technologies. As **Figure 1** shows, Roaming refers to the capability for a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. Roaming services are an essential component of an operator’s cost model with critical opex and capex impacts. The back office part of this seamless extension of coverage is enabled by the process of wholesale Roaming Agreement, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
+Roaming operations ensure business continuity and ubiquitous service access to the end customer across various technology stacks including the new 5G and IoT technologies. As Figure 1 shows, Roaming refers to the capability of a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. Roaming services are an essential component of an operator’s cost model with critical opex and capex impacts. The back office part of this seamless extension of coverage is enabled by the process of wholesale Roaming Agreement, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram6.PNG">
 
 **Figure 1**: Roaming Agreement definition.
 
-The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent Roaming Agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone companies (TELCO).
+The Roaming Agreement addresses the technical and commercial components necessary to enable the service to a Roaming Customer, so that it constitutes an essential part of the business, managing issues such as the management of interoperator charges. Therefore conducting a dynamic and transparent Roaming Agreement drafting process ensures adequate monetization, ensuring the long-term profitability for Telephone companies (TELCO). Transforming this process is seen as the first step of digitizing the roaming agreement processes starting with the drafting and negotiation processes and providing a foundation for the rest of processes including settlement and dispute resolution.
 
-## Roaming Agreement Overview.
+## 3. Roaming Agreement Overview.
 
-To standardize the legal commercial aspects of the Roaming Agreement, the GSM Association broadly outlines the content of such Roaming Agreement in standardized form for its members [2]. Thus, based on these GSMA-defined template standards, MNOs should be concerned with conducting the Roaming Agreement drafting process as part of a negotiation process. On the one hand, during the drafting process of the Roaming Agreement, the parties should analyze the articles contained in the standard templates to determine whether:
+To standardize the legal commercial aspects of the Roaming Agreement, the GSM Association broadly outlines the content of such Roaming Agreement in standardized form for its members [2]. Thus, based on these GSMA-defined template standards, MNOs should be concerned with conducting the Roaming Agreement drafting process as part of a negotiation process. On the one hand, during the drafting process of the Roaming Agreement, the parties should analyze the articles contained in the standard templates to determine whether to:
 
-1. Leave an article as found in the template thereby establishing a standard clause.
-2. Introduce certain variations in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies, and so on concerning the original text, i.e., the GSMA templates.
-3. Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts
-4. Specify the value of certain variables that are found in a certain text, such as dates, names of entities, amounts, and others.
-
-On the other hand, the lifecycle of the Roaming Agreement negotiation process is presented as the compilation of a set of best practices integrated into 7 phases, as **Figure 2** shown. These phases do not represent standards or rules that must be followed in a mandatory way.
+1. Use the article text as found in the template thereby establishing a standard clause.
+2. Specify the value of certain variables that are found in a certain text, such as dates, names of entities, amounts, and others.
+3. Introduce certain variations in the articles/sub-articles, by specifying different wording or sub articles that fulfills specific operator requirements.
+4. Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts.
 
 <img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
 
 **Figure 2**: Roaming Agreement negotiation stages.
 
-## The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.
+On the other hand, the lifecycle of the Roaming Agreement negotiation process is presented as the compilation of a set of best practices integrated into 7 phases, as illustrated in Figure 2. These phases do not represent standards or rules that must be followed in a mandatory way.
 
-Despite its importance, the drafting of Roaming Agreements faces two major shortcomings. On the one hand, authoritative voices such as [3], define the process of drafting and negotiating Roaming Agreements as a manual, slow and untrustworthy process, since it is mostly very ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. Secondly, although GSMA in a recent study has enabled trust mechanisms for Wholesale Roaming Initiative [4], their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement. Hence the need to establish a framework that provides capabilities such as:
+## 4. The Problem: Methods and mechanisms currently available for drafting and negotiating Roaming Agreements.
+
+Despite its importance, the drafting of Roaming Agreements faces two major shortcomings. On the one hand, authoritative voices such as [3], define the process of drafting and negotiating Roaming Agreements as a manual, slow and untrustworthy process, since it is mostly very ‘analog’ with successive exchanges of information between the parties using traditional means such as email or regular mail. Secondly, although GSMA in a recent study has enabled trust mechanisms for Wholesale Roaming Initiative [4], their approach is a rather more general one in terms of negotiation and drafting of the Roaming Agreement. Hence there is a need to establish a framework that provides capabilities such as:
 
 * Provide a fine-grained methodology that digitizes the Roaming agreement drafting process.
 * Promote a transparent negotiation process between MNOs.
 * Ensure traceability in the Roaming Agreement drafting process.
   
-## The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.
+## 5. The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.
 
-Nowadays, blockchain emerges as an essential technology to ensure transparency, traceability and fine-grain analysis of Roaming Agreement drafting and negotiation. This is because on the one hand, blockchain has the potential to transform business processes in all industries, as it eliminates the need for "middlemen" and manual processes because it can ensure the validity of stored data (such as transactions) which cannot be subsequently modified without the change being visible to all parties. While on the other hand, blockchain includes smart contracts that define the transaction logic that controls the lifecycle of a business object contained in the world state.
-
-Despite the advantages of the technology, a blockchain process is not conceivable without the integration of a set of technologies. Considering that blockchain-based solutions involve cross-technology integration where multiple technology stacks can contribute to solving a business problem, this project aims to constitute a solution that while having as its basis the properties and advantages defined for blockchain technology integrates a set of open source technologies such as Natural Language Processing (NLP) technologies with the aim to:
+Nowadays, blockchain emerges as an essential technology to ensure transparency, traceability and fine-grained analysis of Roaming Agreement drafting and negotiation. This is because on the one hand, blockchain has the potential to transform business processes in all industries, as it eliminates the need for "middlemen" and manual processes because it can ensure the validity of stored data (such as transactions) which cannot be subsequently modified without the change being visible to all parties. While on the other hand, blockchain includes smart contracts that define the transaction logic that controls the lifecycle of a business object contained in the world state.
+Despite the advantages of the technology, a blockchain process is not conceivable without the integration of a set of technologies. Considering that blockchain-based solutions involve cross-technology integration where multiple technology stacks can contribute to solving a business problem, this project aims to constitute a solution that while having as its basis the properties and advantages defined for blockchain technology integrates other technologies such as Natural Language Processing (NLP) technologies with the aim to:
  
 1. Build a library of drafting items with a set of variables to be extracted from available templates and previous Roaming Agreements using the NLP Natural Language Processing process.
 2. Translate the drafting and negotiation process as a blockchain code in Blockchain to digitize the process and provide a maintainable and actionable copy of the agreement.
