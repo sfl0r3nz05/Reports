@@ -1,5 +1,12 @@
 # OAuth 2
 
+- [OAuth 2](#oauth-2)
+  - [Descripción](#descripción)
+  - [Introducción](#introducción)
+  - [Partes de Oauth](#partes-de-oauth)
+  - [Flujo OAuth: Server To Server](#flujo-oauth-server-to-server)
+    - [Consideraciones de seguridad](#consideraciones-de-seguridad)
+
 ## Descripción
 
 Este documento describe el funcionamiento de OAuth, un estándar diseñado para *delegar autoridad* sobre un recurso y por tanto de mucha utilidad para el desarrollo de este proyecto tanto desde el punto de vista de aplicabilidad como desde el punto de vista conceptual.
@@ -40,55 +47,55 @@ Existen escenarios donde los servidores de recurso y autorización se encuentras
 
 ## Flujo OAuth: Server To Server
 
-Existen muchos flujos de Oauth, sin embargo, *server to server* presenta uno de los escenarios más comunes es uno de los más usados.En este ejemplo tenemos la aplicación uno y dos la *APP 1* es el cliente en el flujo OAuth y la *APP 2* es tanto el servidor de autorización como de recursos.
+Existen muchos flujos de Oauth, sin embargo, *server to server* presenta uno de los escenarios más comunes es uno de los más usados. En este ejemplo tenemos la aplicación uno y dos la *APP 1* es el cliente en el flujo OAuth y la *APP 2* es tanto el servidor de autorización como de recursos.
 
    ![alt text](./img/server_to_server.png "Title")
 
-Antes de que los usuarios de la *aplicación 1* puedan integrarla con los datos de la *APP 2*, los administradores de cada una de las aplicaciones deben comunicarse entre sí. El administrador de la *APP 1* registra su aplicación en la *APP 2*, proporcionando un nombre o identificador de la aplicación y la url de respuesta o la uri de redirección a la que debe enviar los tokens. 
+1. Antes de que los usuarios de la *aplicación 1* puedan integrarla con los datos de la *APP 2*, los administradores de cada una de las aplicaciones deben comunicarse entre sí. El administrador de la *APP 1* registra su aplicación en la *APP 2*, proporcionando un nombre o identificador de la aplicación y la url de respuesta o la uri de redirección a la que debe enviar los tokens. 
 
    ![alt text](./img/server_to_server_two.png "Title")
 
-El administrador de la *APP 2* genera un identificador de cliente y un secreto que la *aplicación 1* debe utilizar en su comunicación con la *APP 2* de forma muy similar a un nombre de usuario y una contraseña. La identificación del cliente y el secreto pueden, por supuesto, generarse automáticamente a través de la página web de configuración de *APP 2* 
+2. El administrador de la *APP 2* genera un identificador de cliente y un secreto que la *aplicación 1* debe utilizar en su comunicación con la *APP 2* de forma muy similar a un nombre de usuario y una contraseña. La identificación del cliente y el secreto pueden, por supuesto, generarse automáticamente a través de la página web de configuración de *APP 2* 
 
    ![alt text](./img/server_to_server_three.png "Title")
 
-Una vez realizada esta configuración inicial, el propietario de los recursos o el usuario puede iniciar el flujo de integración entre las dos aplicaciones.
+3. Una vez realizada esta configuración inicial, el propietario de los recursos o el usuario puede iniciar el flujo de integración entre las dos aplicaciones.
 
    ![alt text](./img/server_to_server_four.png "Title")
 
-el flujo comienza con el navegador web del usuario siendo redirigido con el mensaje que contiene el id del cliente de la *APP 1*,  su uri de redirección y el tipo de respuesta. En otras palabras, qué es lo que quiere la *APP 1*.
+4. El flujo comienza con el navegador web del usuario siendo redirigido con el mensaje que contiene el id del cliente de la *APP 1*,  su uri de redirección y el tipo de respuesta. En otras palabras, qué es lo que quiere la *APP 1*.
 
    ![alt text](./img/server_to_server_five.png "Title")
 
-En este caso, se trata de un código de autorización para que *APP 1* pueda obtener un token de acceso, pero *APP 1* también debe especificar el alcance (*scope*) del código de autorización. El alcance es el nivel de acceso a los datos del propietario del recurso que se solicita. En este ejemplo, *APP 1* quiere acceder al perfil del usuario y a sus contactos.
+5. En este caso, se trata de un código de autorización para que *APP 1* pueda obtener un token de acceso, pero *APP 1* también debe especificar el alcance (*scope*) del código de autorización. El alcance es el nivel de acceso a los datos del propietario del recurso que se solicita. En este ejemplo, *APP 1* quiere acceder al perfil del usuario y a sus contactos.
 
    ![alt text](./img/server_to_server_six.png "Title")
 
-El navegador del usuario está ahora conectado a la *APP 2* y, si aún no se ha autenticado, el usuario debe iniciar la sesión.
+6. El navegador del usuario está ahora conectado a la *APP 2* y, si aún no se ha autenticado, el usuario debe iniciar la sesión.
 
    ![alt text](./img/server_to_server_seven.png "Title")
 
-El usuario se presenta ahora con el alcance y muchas veces el usuario puede realmente cambiar el nivel de acceso concedido. Por ejemplo, permitir sólo el acceso de lectura al contexto y no el acceso de lectura y escritura.
+7. El usuario se presenta ahora con el alcance y muchas veces el usuario puede realmente cambiar el nivel de acceso concedido. Por ejemplo, permitir sólo el acceso de lectura al contexto y no el acceso de lectura y escritura.
 
    ![alt text](./img/server_to_server_eigth.png "Title")
 
-Si el usuario aprueba o da su consentimiento a la negociación del alcance (*scope*), se genera un código de autorización que se envía a la *APP 1* a través del navegador del usuario.
+8. Si el usuario aprueba o da su consentimiento a la negociación del alcance (*scope*), se genera un código de autorización que se envía a la *APP 1* a través del navegador del usuario.
 
    ![alt text](./img/server_to_server_nine.png "Title")
 
-La *APP 1* toma este código de autorización y lo envía directamente a *APP 2* junto con su id de cliente y su secreto especificando que quiere intercambiar el código de autorización con un token de acceso.
+9. La *APP 1* toma este código de autorización y lo envía directamente a *APP 2* junto con su id de cliente y su secreto especificando que quiere intercambiar el código de autorización con un token de acceso.
 
    ![alt text](./img/server_to_server_ten.png "Title")
 
-El servidor de autorización de *APP 2* genera y envía el token de acceso a la *APP 1*. El token de acceso suele tener un tiempo de vida limitado y es de tipo portador (*bearer*), lo que significa que cualquier persona que disponga de un token puede utilizarlo.
+10. El servidor de autorización de *APP 2* genera y envía el token de acceso a la *APP 1*. El token de acceso suele tener un tiempo de vida limitado y es de tipo portador (*bearer*), lo que significa que cualquier persona que disponga de un token puede utilizarlo.
 
    ![alt text](./img/server_to_server_eleven.png "Title")
 
-Ahora la *APP 1* tiene un token de acceso que le permite acceder a los datos del propietario del recurso y el token de acceso está sellado con los privilegios o el alcance del acceso a los datos.
+11. Ahora la *APP 1* tiene un token de acceso que le permite acceder a los datos del propietario del recurso y el token de acceso está sellado con los privilegios o el alcance del acceso a los datos.
 
    ![alt text](./img/server_to_server_twelve.png "Title")
 
-El token de acceso se utiliza para autorizar cada una de las llamadas api de la *APP 1* desde la *APP 2*.
+12. El token de acceso se utiliza para autorizar cada una de las llamadas api de la *APP 1* desde la *APP 2*.
 
    ![alt text](./img/server_to_server_thirdteen.png "Title")
 
