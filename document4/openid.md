@@ -33,18 +33,18 @@ Como se muestra en la siguiente figura, se tienen dos aplicaciones donde una es 
 
    ![alt text](./img/openidc_3.png "Title")
 
-Cuando el usuario intenta acceder a la APP 1, la APP 1 redirige al usuario al proveedor configurado de open id connect para la autenticación. Esto se hace con un mensaje de redirección muy parecido a nuestro flujo original de OAuth 2.0 pero con un ámbito (scope) adicional el Open Id1.
+1. Cuando el usuario intenta acceder a la APP 1, la APP 1 redirige al usuario al proveedor configurado de open id connect para la autenticación. Esto se hace con un mensaje de redirección muy parecido a nuestro flujo original de OAuth 2.0 pero con un ámbito (scope) adicional el Open Id1.
 
    ![alt text](./img/openidc_4.png "Title")
 
-El usuario se autentifica en el proveedor y se envía un código de autorización a la *APP 1*.
+2. El usuario inicia sesión en el proveedor y se envía un código de autorización a la *APP 1*.
 
    ![alt text](./img/openidc_5.png "Title")
 
-La *APP 1* envía el código de autorización a través del canal de retorno al proveedor y recibe no sólo un token de acceso sino también un token de identificación. El token de identificación contiene algunas claims sobre el usuario, como el asunto que lo identifica de forma exclusiva, pero no se envía toda la información sobre el usuario en el token de identificación, los tokens de identificación deben ser pequeños.
+3. La *APP 1* envía el código de autorización a través del canal de retorno al proveedor y recibe no sólo un token de acceso sino también un token de identificación. El token de identificación contiene algunas claims sobre el usuario, como el asunto que lo identifica de forma exclusiva, pero no se envía toda la información sobre el usuario en el token de identificación, los tokens de identificación deben ser pequeños.
 
    ![alt text](./img/openidc_6.png "Title")
 
-Si la *relying party* requiere más información sobre el usuario, hace uso de su token de acceso y se conecta al punto final de información del usuario para recuperar más datos y atributos del usuario.
+4. Si la *relying party* requiere más información sobre el usuario, hace uso de su token de acceso y se conecta al punto final de información del usuario para recuperar más datos y atributos del usuario.
 
    ![alt text](./img/openidc_7.png "Title")
