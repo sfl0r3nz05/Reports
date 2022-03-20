@@ -9,8 +9,8 @@
   - [5. The Solution: A decentralized blockchain-based platform for the efficient management of Roaming Agreements.](#5-the-solution-a-decentralized-blockchain-based-platform-for-the-efficient-management-of-roaming-agreements)
   - [6. Reference Architecture.](#6-reference-architecture)
     - [6.1 Application lifecycle](#61-application-lifecycle)
-  - [7. Architecture Design Details.](#7-architecture-design-details)
-    - [7.1. NLP-Engine design.](#71-nlp-engine-design)
+  - [7. Architecture Design Details](#7-architecture-design-details)
+    - [7.1. NLP-Engine design](#71-nlp-engine-design)
     - [7.2. Chaincode design.](#72-chaincode-design)
   - [8. Architecture Implementation details.](#8-architecture-implementation-details)
     - [8.1. NLP Implementation.](#81-nlp-implementation)
@@ -47,7 +47,7 @@ The process of drafting the Roaming Agreement is mostly highly ‘analog’ with
 
 Roaming operations ensure business continuity and ubiquitous service access to the end customer across various technology stacks including the new 5G and IoT technologies. As Figure 1 shows, Roaming refers to the capability of a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. Roaming services are an essential component of an operator’s cost model with critical opex and capex impacts. The back office part of this seamless extension of coverage is enabled by the process of wholesale Roaming Agreement, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram6.PNG">
+   ![alt text](./images/Diagram6.PNG "Title")
 
 **Figure 1**: Roaming Agreement definition.
 
@@ -62,7 +62,7 @@ To standardize the legal commercial aspects of the Roaming Agreement, the GSM As
 3. Introduce certain variations in the articles/sub-articles, by specifying different wording or sub articles that fulfills specific operator requirements.
 4. Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram11.PNG">
+   ![alt text](./images/Diagram11.PNG "Title")
 
 **Figure 2**: Roaming Agreement negotiation stages.
 
@@ -88,7 +88,7 @@ Despite the advantages of the technology, a blockchain process is not conceivabl
 
 The established objectives are intended to be achieved on the basis of the architecture shown in Figure 3, which describes the role of the participating entities as well as the functionalities they perform throughout the application lifecycle.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram14.PNG">
+   ![alt text](./images/Diagram14.PNG "Title")
 
 **Figure 3**: Reference Architecture.
 
@@ -98,15 +98,15 @@ To simplify, the architecture diagram below shows the example of the entities pa
 
 Once the reference architecture has been defined, including the main components and functionalities that are part of the project, the base lifecycle of the application is defined. Figure 4 shows a first approximation of the application life cycle involving the three entities mentioned previously. In this sense, four stages have been defined as part of the life cycle. The first one starts when two MNOs enable a Roaming Agreement principle through a document that could be shared with the GSMA as central authority. At this point, GSMA is able to create the Roaming Agreement Output Template (RAOT) via NLP Engine execution. The second implies that once the GSMA loads the RAOT to the platform to manage the Roaming Agreement, it must enable the MNOs, who will be able to register themselves on the HFB before starting the negotiation and drafting of the roaming agreement. The third stage contains the Roaming Agreement drafting process. Although in Figure 4, only 3 processes are represented, any combination that includes to add the article, to accept the article, to propose changes in the article and to reject the article, can be performed. Finally, the fourth stage consists of the proposal to reach an agreement, as well as acceptance of the scope of the agreement.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram22.PNG">
+   ![alt text](./images/Diagram22.PNG "Title")
 
 **Figure 4**: Application lifecycle.
 
-## 7. Architecture Design Details.
+## 7. Architecture Design Details
 
 In the next sections, the details of both the NLP engine and the chaincode are presented, first by talking on the concept of the NLP engine and then describing the chaincode implementation.
 
-### 7.1. NLP-Engine design.
+### 7.1. NLP-Engine design
 
 Section 3 defined the four features to be analyzed, which can be summarized as follows:
 
@@ -130,25 +130,25 @@ From a design point of view, the chaincode is defined by actions and statuses, w
 
 The Statuses for Roaming Agreement Negotiation allows the negotiation to be conducted at the highest level, to determine when the final version of the Roaming Agreement is reached. Without being too rigorous with each of the transitions that take place, each of the states that make up this stage is shown in Figure 5. Thus, in the initial status, the MNOs must be enrolled, which enables either of the two MNOs participating in the negotiation to propose to initiate the Roaming Agreement drafting process. Once the initiation of the agreement is confirmed, the negotiation of the drafting of articles and sub-articles proceeds, where the other stages are involved, ending with a proposal and confirmation of acceptance of the Roaming Agreement.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram7.PNG">
+   ![alt text](./images/Diagram7.PNG "Title")
 
 **Figure 5**: Statuses for Roaming Agreement Negotiation.
 
 The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the Roaming Agreement have reached the status of being accepted by both parties. Thus, as shown in Figure 6, belonging to the Statuses for the Article Drafting stage, once an article is added, it goes through a transition of proposed changes until finally the article is accepted by both parties.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram8.PNG">
+   ![alt text](./images/Diagram8.PNG "Title")
 
 **Figure 6**: Statuses for Roaming Agreement Negotiation.
 
 However, the fact that all articles are in accepted status by both MNOs at a given time does not necessarily imply that the Roaming Agreement is close to being reached, but both entities may intend to add a new article despite that all currently added articles are in an accepted status. For this purpose, the Statuses for the Articles Negotiation stage exists. As shown in Figure 7, the function of this stage is to control the status of all articles added. For this, it establishes a transient status that determines that all added articles are accepted. On the one hand, this stage allows continuing the article drafting process if a new article is proposed. On the other hand, this stage allows moving towards the achievement of the final version of the Roaming Agreement.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram9.PNG">
+   ![alt text](./images/Diagram9.PNG "Title")
 
 **Figure 7**: Statuses for the Articles Negotiation stage.
 
 As mentioned previously, the transition between states is due to the interaction between the two parties through the identified actions. From a programming point of view, the actions are performed through chaincode methods, which are invoked or queried using the frontend application through a middleware/backend service. Table 1 defines the set of design methods that are part of the chaincode.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Table1.PNG">
+   ![alt text](./images/Table1.PNG "Title")
 
 **Table 1**: Method definitions in the chaincode lifecycle.
 
@@ -177,7 +177,7 @@ The following is a brief description of the services only maintained by GSMA:
 
 As these are the two most important parts of the project development, we will now focus on the implementation of both the NLP engine and chaincode.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram13.PNG">
+   ![alt text](./images/Diagram13.PNG "Title")
 
 **Figure 8**: Implemented architecture based on microservices.
 
@@ -185,7 +185,7 @@ As these are the two most important parts of the project development, we will no
 
 The overall architecture of the NLP Engine is built over a docker infrastructure, establishing as inputs the Roaming Agreement drafts, as well as the GSMA templates. The processing layer is the logic identified as the  NLP Engine and as output is the classification of articles in standard clauses, variations, customized texts, and variables. This is shown in Figure 9. A very important component in the NLP engine is the Amazon Comprehend service that uses machine learning to uncover valuable insights and connections in text. Throughout the Amazon Comprehend tool Roaming Agreement text is processed to extract key phrases, entities and sentiment for further analysis.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram12.PNG">
+   ![alt text](./images/Diagram12.PNG "Title")
 
 **Figure 9**: Architecture implemented for the NLP engine.
 
@@ -240,12 +240,11 @@ Once the variables have been determined, a similarity analysis is carried out to
 
 Figure 10 illustrates part of the set of methods that make up the chaincode life cycle. The invocation of these methods establishes the transition between the different states of the chaincode. This transition takes place at three application levels as detailed in Table 2. The following section focuses on providing details of the different modules that make up the chaincode and that make it possible to carry out the above-mentioned interactions.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram3.PNG">
+   ![alt text](./images/Diagram3.PNG "Title")
 
 **Figure 10**: Chaincode lifecycle.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Table2.PNG">
-
+   ![alt text](./images/Table2.PNG "Title")
 **Table 2**: States associated with application levels.
 
 #### 8.2.1. Chaincode implementation details.
@@ -261,13 +260,13 @@ The chaincode implementation consists of 6 modules as described below:
 
 The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that the chaincode methods were defined in Table 1, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is proposeAgreementInitiation, which has been defined as the proposal to initiate the Roaming Agreement drafting by one of the two participating MNOs, causing the transition from the initial state to the started_ra as shown in Figure 11:
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram10.PNG">
+   ![alt text](./images/Diagram10.PNG "Title")
 
 **Figure 11**: Statuses for Roaming Agreement Negotiation with selected status.
 
 Figure 12 below shows the sequence diagram illustrating the relationship between the modules defined above.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram5.PNG">
+   ![alt text](./images/Diagram5.PNG "Title")
 
 **Figure 12**: Sequence diagram of the proposeAgreementInitiation method.
 
@@ -293,15 +292,15 @@ The contextualization of the designed and implemented architecture involves obta
 
 Some pieces of the visualization interface of the roaming agreement drafting process are included in this document. The details of the transition between states, until closing the roaming agreement between two registered MNOs can be seen through a [demonstration video](https://youtu.be/5Oas8EMk0lw).
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram16.PNG">
+   ![alt text](./images/Diagram16.PNG "Title")
 
 **Figure 13**: MNO registration.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram17.PNG">
+   ![alt text](./images/Diagram17.PNG "Title")
 
 **Figure 14**: Roaming Agreement registration.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram18.PNG">
+   ![alt text](./images/Diagram18.PNG "Title")
 
 **Figure 15**: Roaming Agreement reached.
 
@@ -309,11 +308,11 @@ Some pieces of the visualization interface of the roaming agreement drafting pro
 
 Based on the integrated Hyperledger mentorship project, we have been able to visualize the transactions committed into the ledger.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram19.PNG">
+   ![alt text](./images/Diagram19.PNG "Title")
 
 **Figure 16**: Transaction committed into the ledger.
 
-<img src="https://github.com/sfl0r3nz05/Report/blob/main/images/Diagram20.PNG">
+   ![alt text](./images/Diagram20.PNG "Title")
 
 **Figure 17**: Transaction committed into the ledger.
 
